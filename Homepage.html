@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MFNHS</title>
+    <link rel="stylesheet" href="style of homepage.css">
+</head>
+<body>
+    <div class="wrapper">
+        <nav class="navbar">
+            <div class="logo-title-group">
+                <img class="logo" src="school.png" alt="School Logo">
+                <h1>Manolo Fortich National High School</h1>
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#videoSection">Video</a></li>
+                <li><a href="#aboutSection">About</a></li>
+                <li><a href="#report">Services</a></li>
+            </ul>
+        </nav>
+        
+        <div class="center" id="home">
+            <h1></h1>
+            <h2></h2>
+            <div class="spacer"></div>  <!-- New spacer div -->
+        </div>
+        
+        <div id="videoSection">
+            <h1>Bullying Awareness</h1>
+            <div class="videoWrapper">
+                <iframe src="https://www.youtube.com/embed/Jcg93UlOwE0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="videoDescription">
+                <h3>This video highlights key issues and solutions for bullying in educational environments. Learn about the impacts of bullying and what we can do to prevent it in our schools and communities.</h3>
+            </div>
+        </div>
+        
+        
+        <div id="aboutSection">
+            <h1>About Us</h1>
+            <div class="bullying-container">
+                <div class="bullying-type">
+                    <h2>Physical Bullying</h2>
+                    <p>Physical bullying involves physical attacks such as hitting, kicking, or pushing. It's one of the most visible and straightforward forms of bullying.</p>
+                </div>
+                <div class="bullying-type">
+                    <h2>Verbal Bullying</h2>
+                    <p>Verbal bullying includes teasing, name-calling, inappropriate sexual comments, and taunting. It can be very damaging to the victim's mental health.</p>
+                </div>
+                <div class="bullying-type">
+                    <h2>Relational Bullying</h2>
+                    <p>Also known as social bullying, it involves hurting someone's reputation or relationships, like spreading rumors or deliberately excluding someone from a group.</p>
+                </div>
+                <div class="bullying-type">
+                    <h2>Cyber Bullying</h2>
+                    <p>Cyber bullying occurs online and includes sending, posting, or sharing negative, harmful, false, or mean content about someone else, causing embarrassment or humiliation.</p>
+                </div>
+                <div class="bullying-type">
+                    <h2>Sexual Bullying</h2>
+                    <p>Sexual bullying involves harmful, humiliating actions that target a person sexually. Examples include sexual name-calling, crude comments, vulgar gestures, or unconsented touching.</p>
+                </div>
+                <div class="bullying-type">
+                    <h2>Prejudicial Bullying</h2>
+                    <p>This type of bullying arises from prejudices people may have toward people of different races, religions, or other groups. It can overlap with other types of bullying and lead to severe discrimination.</p>
+                </div>
+            </div>
+        </div>
+    
+        <div id="report">
+            <h1>Services</h1>
+            <h3>You can send email to the guidance office here.</h3>
+            <div class="contact-container">
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                    <input type="hidden" name="access_key" value="278815fa-e7de-4d4a-b1a3-6dfcf22eb51c">
+                    <div class="col-1-2">
+                        <h2 class="section-header">Leave A Message</h2>
+                        <label for="name">Your Name</label>
+                        <input id="name" type="text" name="name" placeholder="Full Name" required class="input-field">
+                        <label for="email">Your Email</label>
+                        <input id="email" type="email" name="email" placeholder="Email Address" required class="input-field">
+                        <label for="reason">Select Contact Reason</label>
+                        <select id="reason" name="reason">
+                            <option selected disabled>Please Select One</option>
+                            <option>Physical Bullying</option>
+                            <option>Verbal Bullying</option>
+                            <option>Relational Bullying</option>
+                            <option>Cyber Bullying</option>
+                            <option>Sexual Bullying</option>
+                            <option>Prejudicial Bullying</option>
+                        </select>
+                        <label for="details">Issue Details</label>
+                        <textarea id="details" name="details" placeholder="Provide as much detail as you can so we can address your issue." required></textarea>
+                        <input type="submit" value="Submit Message" class="button button-primary float-right">
+                    </div>
+                    <div class="col-1-2">
+                        <h1><b>School Location</b></h1>
+                        <img src="location.png" alt="Office Location" style="width: 100%; height: 350px;">
+                        <ul class="location-details">
+                            <b>Address:</b> 233 S Wacker Dr, Chicago, IL 60606 <br>
+                            <b>Phone:</b> school number <br>
+                            <b>Email:</b> mfnhs@gmail.com
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        
+
+    <script>
+        window.onload = function() {
+            window.scrollTo(0, 0);  // Scrolls to the top-left corner of the page
+        };
+    </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const sections = document.querySelectorAll("section, div[id]");
+    const navLinks = document.querySelectorAll('.navbar a');
+
+    function onScroll() {
+        let scrollPos = window.scrollY + window.innerHeight * 0.1; // Adjust multiplier for when the highlight should change
+
+        sections.forEach((section) => {
+            if (section.offsetTop <= scrollPos && section.offsetTop + section.offsetHeight > scrollPos) {
+                navLinks.forEach((link) => {
+                    link.classList.remove('active');
+                    if (section.getAttribute('id') === link.getAttribute('href').substring(1)) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }
+
+    window.addEventListener('scroll', onScroll);
+});
+
+    </script>
+    
+    
+</body>
+</html>
